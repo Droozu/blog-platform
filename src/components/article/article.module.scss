@@ -1,0 +1,51 @@
+@import '../../scss/colors';
+
+.container {
+  padding: 15px 14px 24px;
+
+  border-radius: 5px;
+  background-color: $surface-color;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.container_small {
+  height: 140px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 26px;
+}
+
+.header_left {
+  max-width: 682px;
+}
+
+.title {
+  display: flex;
+  column-gap: 6px;
+}
+
+.header_right {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.username {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.body {
+  margin-top: 26px;
+}

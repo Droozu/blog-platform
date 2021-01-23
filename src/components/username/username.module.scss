@@ -1,0 +1,5 @@
+@import '../../scss/mixins';
+
+.username {
+  @include title-h6;
+}

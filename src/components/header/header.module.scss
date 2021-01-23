@@ -1,0 +1,24 @@
+@import '../../scss/mixins';
+@import '../../scss/colors';
+@import '../../scss/consts';
+
+.wrapper {
+  @include title-h6;
+
+  background-color: $surface-color;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: $container-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 15px 22px;
+}
+
+.title {
+  @include title-h6;
+}

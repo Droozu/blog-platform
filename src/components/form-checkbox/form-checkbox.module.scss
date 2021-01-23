@@ -1,0 +1,47 @@
+@import '../../scss/colors';
+@import '../../scss/mixins';
+
+.checkbox {
+  display: flex;
+
+  color: #595959;
+
+  font-size: 14px;
+}
+
+.input {
+  @include visually-hidden;
+}
+
+.label {
+  position: relative;
+
+  padding-left: 24px;
+
+  &::before {
+    position: absolute;
+    top: 2px;
+    left: 0;
+
+    width: 16px;
+    height: 16px;
+
+    content: '';
+
+    border: 1px solid #e8e8e8;
+    border-radius: 2px;
+  }
+}
+
+.input:checked ~ .label::before {
+  border: none;
+  background-color: $primary-color;
+  background-image: url('icon-check.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 11px 9px;
+}
+
+.input:not(:checked) ~ .label--required::before {
+  border: 1px solid $error-color;
+}

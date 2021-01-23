@@ -1,0 +1,19 @@
+@import '../../scss/colors';
+
+.inner {
+  margin-bottom: 0;
+
+  color: inherit;
+}
+
+.inner_theme_main {
+  margin-top: 4px;
+
+  color: $text-color;
+}
+
+.inner_theme_secondary {
+  margin-top: 16px;
+
+  color: $text-color-secondary;
+}

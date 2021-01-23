@@ -1,0 +1,66 @@
+@import './colors';
+
+@mixin visually-hidden {
+  position: absolute;
+
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip-path: inset(100%);
+}
+
+@mixin list-reset {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+
+  list-style-type: none;
+}
+
+@mixin container {
+  padding: 15px 14px 24px;
+
+  border-radius: 5px;
+  background-color: $surface-color;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@mixin title {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  color: $title-color;
+
+  font-family: Inter, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin title-h5 {
+  @include title;
+
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@mixin title-h6 {
+  @include title;
+
+  font-size: 18px;
+  line-height: 28px;
+}
+
+@mixin border-button($color) {
+  color: $color;
+  border: 1px solid $color;
+  border-radius: 5px;
+}

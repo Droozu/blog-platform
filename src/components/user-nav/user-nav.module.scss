@@ -1,0 +1,21 @@
+@import '../../scss/mixins';
+
+@mixin flex-pattern($gap) {
+  display: flex;
+  align-items: center;
+  column-gap: #{$gap}px;
+}
+
+.wrapper {
+  @include flex-pattern(26);
+}
+
+.user {
+  @include flex-pattern(12);
+}
+
+.links {
+  @include list-reset;
+
+  display: flex;
+}

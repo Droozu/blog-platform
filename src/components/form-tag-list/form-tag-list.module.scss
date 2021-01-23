@@ -1,0 +1,15 @@
+@import '../../scss/colors';
+@import '../../scss/mixins';
+@import '../form-tag/form-tag.module';
+
+.tags {
+  margin-top: 12px;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.tag_list {
+  @include list-reset;
+}

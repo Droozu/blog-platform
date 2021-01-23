@@ -1,0 +1,39 @@
+@import '../../scss/colors';
+
+.label {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 14px;
+}
+
+.label + .label {
+  margin-top: 12px;
+}
+
+.input {
+  margin-top: 2px;
+  padding: 8px 12px;
+
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+
+  font-size: 16px;
+  line-height: 24px;
+
+  &::placeholder {
+    color: #bfbfbf;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &--required {
+    border: 1px solid $error-color;
+  }
+}
+
+.error {
+  color: #f5222d;
+}

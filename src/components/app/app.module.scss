@@ -1,0 +1,22 @@
+@import '../../scss/consts';
+@import '../../scss/colors';
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100%;
+}
+
+.body {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  width: $content-width;
+  margin-top: 26px;
+  margin-right: auto;
+  margin-left: auto;
+}

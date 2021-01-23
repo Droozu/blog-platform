@@ -1,0 +1,21 @@
+@import '../../scss/colors';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  padding: 6px;
+
+  cursor: pointer;
+
+  border: none;
+  background-color: $surface-color;
+
+  line-height: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
