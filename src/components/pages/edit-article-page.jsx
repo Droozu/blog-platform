@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Result, Button } from 'antd';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import useSlug from '../../hooks/useSlug';
 import useAuthor from '../../hooks/useAuthor';
 import {
@@ -42,15 +43,26 @@ export default function EditArticlePage() {
 
   if (!isLoaded) return <Spinner />;
 
+  if (!isAuthor) {
+    return (
+        <Result
+            status="403"
+            title="403"
+            subTitle="Sorry, you are not authorized to access this page."
+            extra={<Link to="/articles"><Button type="primary">Back Home</Button></Link>}
+        />
+    );
+  }
+
   return (
-    <FormBox methods={methods} onSubmit={handleFormSubmit} title="Edit article" button="Send">
-      <Spinner spinning={!isUnloaded} />
-      <FormArticle
-        defaultTitle={article.title}
-        defaultDescription={article.description}
-        defaultBody={article.body}
-        defaultTagList={article.tagList}
-      />
-    </FormBox>
+      <FormBox methods={methods} onSubmit={handleFormSubmit} title="Edit article" button="Send">
+        <Spinner spinning={!isUnloaded} />
+        <FormArticle
+            defaultTitle={article.title}
+            defaultDescription={article.description}
+            defaultBody={article.body}
+            defaultTagList={article.tagList}
+        />
+      </FormBox>
   );
 }
