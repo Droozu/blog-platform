@@ -2,6 +2,8 @@
 @import '../../scss/mixins';
 
 .checkbox {
+  cursor: pointer;
+
   display: flex;
 
   color: #595959;
@@ -14,6 +16,8 @@
 }
 
 .label {
+  cursor: pointer;
+
   position: relative;
 
   padding-left: 24px;
