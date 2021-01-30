@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams, useHistory, Link } from 'react-router-dom';
+import { Popconfirm } from "antd";
 import useAuth from '../../hooks/useAuth';
 import useAuthor from '../../hooks/useAuthor';
 import { deleteArticle } from '../../redux/actions/article';
@@ -23,7 +24,9 @@ export default function ArticleControls() {
 
   return (
     <div className={styles.wrapper}>
-      <Button label="Delete" size="small" theme="dangerous" onClick={handleDeleteButton} />
+      <Popconfirm title="Delete this article" onConfirm={handleDeleteButton} okText="Yes" cancelText="No">
+        <Button label="Delete" size="small" theme="dangerous" />
+      </Popconfirm>
       <Link to={`/articles/${slug}/edit`}>
         <Button label="Edit" size="small" theme="success" />
       </Link>
