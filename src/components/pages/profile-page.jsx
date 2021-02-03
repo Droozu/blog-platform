@@ -7,6 +7,7 @@ import ValidationRule from '../../validation-rules';
 import Spinner from '../spinner';
 import { startLoading, stopLoading } from '../../redux/actions/loading';
 import { updateUser } from '../../api/user';
+import SuccessMessage from '../success-message';
 import { logIn } from '../../redux/actions/user';
 
 function deleteEmptyValues(formData) {
@@ -20,6 +21,8 @@ export default function ProfilePage() {
   const { token, username, email } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
+
+
   const handleFormSubmit = useCallback(
     (data) => {
       const body = { user: deleteEmptyValues(data) };
@@ -31,6 +34,7 @@ export default function ProfilePage() {
         if (json.user) {
           const { user: serverUser } = json;
           dispatch(logIn(serverUser));
+            SuccessMessage();
         }
 
         if (json.errors) {
