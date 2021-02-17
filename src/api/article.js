@@ -8,6 +8,12 @@ function getArticleList(page, token) {
   return getResponse(URL, token && { headers: { authorization: `Token ${token}` } });
 }
 
+function getArticleByAuthorList(page, token, user) {
+  const offset = ARTICLES_PER_PAGE * (page - 1);
+  const URL = `${baseURL}/articles/?author=${user}&limit=${ARTICLES_PER_PAGE}&offset=${offset}`;
+  return getResponse(URL, token && { headers: { authorization: `Token ${token}` } });
+}
+
 function getArticle(slug, token) {
   const URL = `${baseURL}/articles/${slug}`;
   return getResponse(URL, token && { headers: { authorization: `Token ${token}` } });
@@ -55,4 +61,4 @@ function unlikeArticle(slug, token) {
   });
 }
 
-export { getArticleList, getArticle, createArticle, editArticle, deleteArticle, likeArticle, unlikeArticle };
+export { getArticleList, getArticle, createArticle, editArticle, deleteArticle, likeArticle, unlikeArticle, getArticleByAuthorList };

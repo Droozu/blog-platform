@@ -16,6 +16,9 @@ export default function UserNav() {
   if (isAuth) {
     return (
       <div className={styles.wrapper}>
+          <Link to="my-article">
+              <Button label="My article" size="small" theme="success" />
+          </Link>
         <Link to="/new-article">
           <Button label="Create article" size="small" theme="success" />
         </Link>

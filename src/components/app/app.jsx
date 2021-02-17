@@ -4,6 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import Header from '../header';
 import ArticleListPage from '../pages/article-list-page';
 import ArticlePage from '../pages/article-page';
+import MyArticleListPage from "../pages/my-article-list-page";
 import NewArticlePage from '../pages/new-article-page';
 import EditArticlePage from '../pages/edit-article-page';
 import SignInPage from '../pages/sign-in-page';
@@ -31,6 +32,7 @@ function App() {
           <Route path="/articles/:slug/edit">
             <EditArticlePage />
           </Route>
+          <Route path="/my-article">{isAuth ? <MyArticleListPage /> : <Redirect to="/sign-In" />}</Route>
           <Route path="/new-article">{isAuth ? <NewArticlePage /> : <Redirect to="/sign-In" />}</Route>
           <Route path="/sign-In">
             <SignInPage />
@@ -39,6 +41,7 @@ function App() {
             <SignUpPage />
           </Route>
           <Route path="/profile">{isAuth ? <ProfilePage /> : <Redirect to="/sign-In" />}</Route>
+
         </Switch>
       </main>
     </div>
