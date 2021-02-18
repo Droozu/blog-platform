@@ -45,24 +45,28 @@ export default function EditArticlePage() {
 
   if (!isAuthor) {
     return (
-        <Result
-            status="403"
-            title="403"
-            subTitle="Sorry, you are not authorized to access this page."
-            extra={<Link to="/articles"><Button type="primary">Back Home</Button></Link>}
-        />
+      <Result
+        status="403"
+        title="403"
+        subTitle="Sorry, you are not authorized to access this page."
+        extra={
+          <Link to="/articles">
+            <Button type="primary">Back Home</Button>
+          </Link>
+        }
+      />
     );
   }
 
   return (
-      <FormBox methods={methods} onSubmit={handleFormSubmit} title="Edit article" button="Send">
-        <Spinner spinning={!isUnloaded} />
-        <FormArticle
-            defaultTitle={article.title}
-            defaultDescription={article.description}
-            defaultBody={article.body}
-            defaultTagList={article.tagList}
-        />
-      </FormBox>
+    <FormBox methods={methods} onSubmit={handleFormSubmit} title="Edit article" button="Send">
+      <Spinner spinning={!isUnloaded} />
+      <FormArticle
+        defaultTitle={article.title}
+        defaultDescription={article.description}
+        defaultBody={article.body}
+        defaultTagList={article.tagList}
+      />
+    </FormBox>
   );
 }
